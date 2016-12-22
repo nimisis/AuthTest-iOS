@@ -4,35 +4,35 @@ Test for authentication interaction on iOS.
 
 After clicking "Login", the webview displays http://nimisis.com/blogin.php containing
 
-<?php
-echo "<html>\n<body>\n";
-echo "<h1>Login form</h1>";
-echo "<form method=\"POST\" action=\"btoken2.php\">";
-echo "<input type=\"text\" placeholder=\"email\" name=\"email\"/><br />\n";
-echo "<input type=\"password\" name=\"password\" placeholder=\"password\"/><br />\n";
-echo "<input type=\"submit\"/>";
-echo "</form>";
-echo "</body>\n</html>";
-?>
+&lt;&gt;php
+echo "&lt;html>\n&lt;body>\n";
+echo "&lt;h1>Login form&lt;/h1>";
+echo "&lt;form method=\"POST\" action=\"btoken2.php\">";
+echo "&lt;input type=\"text\" placeholder=\"email\" name=\"email\"/>&lt;br />\n";
+echo "&lt;input type=\"password\" name=\"password\" placeholder=\"password\"/>&lt;br />\n";
+echo "&lt;input type=\"submit\"/>";
+echo "&lt;/form>";
+echo "&lt;/body>\n&lt;/html>";
+&gt;>
 
 Submitting posts to btoken2.php containing
 
-<?php
+&lt;&gt;php
 $p = "";
 if (isset($_POST)) {
 	$p = implode($_POST);
 }
-echo "<head><meta http-equiv=\"refresh\" content=\"0; url=http://nimcake/btoken.php?p=".$p."\" /></head>";
-?>
+echo "&lt;head>&lt;meta http-equiv=\"refresh\" content=\"0; url=http://nimcake/btoken.php&gt;p=".$p."\" />&lt;/head>";
+&gt;>
 
 redirects to btoken.php containing
 
-<?php
+&lt;&gt;php
 echo "sometoken";
 if (isset($_GET['p'])) {
 	echo $_GET['p'];
 }
-?>
+&gt;>
 
 and then the webview closes itself.
 
@@ -43,9 +43,9 @@ The output is as follows:
 2016-12-22 14:42:09.340 AuthTest[26278:1793487] should start load with request to http://www.nimisis.com/blogin.php
 2016-12-22 14:42:09.577 AuthTest[26278:1793487] did finish load
 2016-12-22 14:42:09.581 AuthTest[26278:1793487] html: 
-<h1>Login form</h1><form method="POST" action="btoken2.php"><input type="text" placeholder="email" name="email"><br>
-<input type="password" name="password" placeholder="password"><br>
-<input type="submit"></form>
+&lt;h1>Login form&lt;/h1>&lt;form method="POST" action="btoken2.php">&lt;input type="text" placeholder="email" name="email">&lt;br>
+&lt;input type="password" name="password" placeholder="password">&lt;br>
+&lt;input type="submit">&lt;/form>
 2016-12-22 14:42:09.581 AuthTest[26278:1793487] {
     Connection = close;
     "Content-Encoding" = gzip;
@@ -71,9 +71,9 @@ The output is as follows:
     Vary = "Accept-Encoding";
     "X-Powered-By" = "PHP/5.4.45";
 }
-2016-12-22 14:42:25.476 AuthTest[26278:1793487] should start load with request to http://nimcake/btoken.php?p=davebutler257@gmail.commypassword
+2016-12-22 14:42:25.476 AuthTest[26278:1793487] should start load with request to http://nimcake/btoken.php&gt;p=davebutler257@gmail.commypassword
 2016-12-22 14:42:25.477 AuthTest[26278:1793487] did start load
-2016-12-22 14:42:25.490 AuthTest[26278:1793487] should start load with request to http://www.nimcake/btoken.php?p=davebutler257@gmail.commypassword
+2016-12-22 14:42:25.490 AuthTest[26278:1793487] should start load with request to http://www.nimcake/btoken.php&gt;p=davebutler257@gmail.commypassword
 2016-12-22 14:42:25.506 AuthTest[26278:1793487] did finish load
 2016-12-22 14:42:25.507 AuthTest[26278:1793487] html: sometokendavebutler257@gmail.commypassword
 2016-12-22 14:42:25.507 AuthTest[26278:1793487] {
